@@ -7,9 +7,34 @@
 // START Enums and Input Objects
 //==============================================================
 
+export enum UserRole {
+  Client = "Client",
+  Delivery = "Delivery",
+  Owner = "Owner",
+}
+
+export interface CreateAccountInput {
+  email: string;
+  password: string;
+  role: UserRole;
+}
+
+export interface EditProfileInput {
+  email?: string | null;
+  password?: string | null;
+}
+
 export interface LoginInput {
   email: string;
   password: string;
+}
+
+export interface RestaurantsInput {
+  page?: number | null;
+}
+
+export interface VerifyEmailInput {
+  code: string;
 }
 
 //==============================================================
